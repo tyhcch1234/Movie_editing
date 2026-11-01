@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>播放 · Movie_editing</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap site-inner">
+    <a class="brand" href="index.html">
+      <span class="logo">M</span>
+      <span>Movie_editing<small>cuts &amp; highlights</small></span>
+    </a>
+    <nav class="site">
+      <a href="index.html#library">作品庫</a>
+      <a href="index.html">返回首頁</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap watch">
+  <div class="player-shell">
+    <video id="player" controls playsinline preload="metadata"></video>
+  </div>
+
+  <div class="watch-grid">
+    <div class="watch-info">
+      <div class="tagrow" id="tags" style="margin-bottom:14px"></div>
+      <h1 id="title">載入中…</h1>
+      <div class="meta-row" id="meta" style="margin-bottom:16px"></div>
+      <p id="desc"></p>
+      <div class="notes" id="sourcenote"></div>
+    </div>
+    <aside class="chapters">
+      <h5>章節</h5>
+      <ol id="chapters"></ol>
+    </aside>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap"><span>Movie_editing — 剪片作品庫</span><span><a href="index.html">首頁</a></span></div>
+</footer>
+
+<script src="assets/js/watch.js"></script>
+</body>
+</html>

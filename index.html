@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Movie_editing · 剪片作品庫</title>
+<meta name="description" content="剪片作品庫：每次剪片之後嘅成品，5 分鐘精華、章節時間碼、原片出處。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap site-inner">
+    <a class="brand" href="index.html">
+      <span class="logo">M</span>
+      <span>Movie_editing<small>cuts &amp; highlights</small></span>
+    </a>
+    <nav class="site">
+      <a href="#library">作品庫</a>
+      <a href="https://github.com" id="repoLink" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <span class="eyebrow">Personal edit archive</span>
+    <h1>剪好嘅片，<span>擺埋一齊</span></h1>
+    <p class="lede" id="lede">每次剪片之後嘅成品都會收埋喺呢度。</p>
+    <div class="hero-stats" id="stats"></div>
+  </div>
+
+  <div class="wrap">
+    <div class="feature" id="feature"></div>
+  </div>
+
+  <section class="block wrap" id="library">
+    <div class="block-head">
+      <h3>作品庫</h3>
+      <p id="libraryNote">按時間倒序排列</p>
+    </div>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <div class="wrap" style="padding-bottom:70px">
+    <div class="notes">
+      <b>點樣新增一條片？</b> 把成品放入 <code>videos/</code>、封面放入 <code>covers/</code>，
+      再喺 <code>assets/data/edits.json</code> 加一個項目（slug、標題、長度、章節時間碼），
+      首頁同播放頁就會自動出現，唔需要改 HTML。
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>Movie_editing — 剪片作品庫</span>
+    <span id="updated"></span>
+  </div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
