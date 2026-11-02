@@ -21,9 +21,11 @@ concurrency:
 
 jobs:
   cut:
+    # 只准 repo 主人觸發，避免公開 repo 被陌生人燒 Actions 分鐘
     if: >
       github.event_name == 'workflow_dispatch' ||
-      contains(github.event.issue.labels.*.name, 'edit-request')
+      (contains(github.event.issue.labels.*.name, 'edit-request') &&
+       github.event.issue.user.login == github.repository_owner)
     runs-on: ubuntu-latest
     timeout-minutes: 90
 
@@ -110,7 +112,7 @@ jobs:
           URL=$(python -c "import json;print(json.load(open('result.json'))['url'])")
           gh issue comment "${{ github.event.issue.number }}" --body "✅ 自動剪好：$URL
           - 長度：$(python -c "import json;d=json.load(open('result.json'));print(d['duration'], d['size'], f\"{d['segments']} 段\")")"
-          gh issue edit "${{ github.event.issue.number }}" --add-label "done"
+          gh issue edit "${{ github.event.issue.number }}" --add-label "done" || true
 
       - name: 通知（失敗）
         if: failure()
