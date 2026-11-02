@@ -1,67 +1,68 @@
 {
- "updated": "2026-11-01",
- "siteTitle": "Movie_editing",
- "siteSubtitle": "剪片作品庫",
- "lede": "每次剪片之後嘅成品都會收埋喺呢度：5 分鐘精華、章節時間碼、原片出處。一個作品一格，慢慢累積成自己嘅片庫。",
- "edits": [
-  {
-   "slug": "eric-eel-5min",
-   "title": "一個人的奧運：Eric the Eel",
-   "subtitle": "2000 雪梨奧運 · 100 米自由泳",
-   "desc": "由 8 分鐘原片剪成 5 分鐘：游得最慢嘅人，游出咗最動人嘅一場比賽。保留完整敘事線——外卡、冇泳池嘅九個月、50 米變 100 米、全場 17000 人為佢打氣。",
-   "video": "videos/eric-eel-5min.mp4",
-   "poster": "covers/eric-eel-5min.jpg",
-   "duration": "5:01",
-   "runtime": 300.9,
-   "date": "2026-11-01",
-   "tags": [
-    "5 分鐘精華",
-    "紀錄片",
-    "運動"
-   ],
-   "featured": true,
-   "source": {
-    "name": "原片《成就感》· shortlism（8:07）",
-    "url": "https://drive.google.com/file/d/1c2z9NTaKvywVmVq9WKaKJYQtk4rpx1hj/view"
-   },
-   "summary": "原片 8:07，剪成 5:01，共 18 個段落，全部喺旁白句子同字幕換行位落刀，冇切斷任何一句對白。",
-   "chapters": [
+  "updated": "2026-11-02",
+  "siteTitle": "Movie_editing",
+  "siteSubtitle": "剪片委託 · 作品庫",
+  "lede": "你提供原片、想要嘅長度、背景音樂同通知 email，我幫你剪成一段完整作品。剪好嘅片會累積喺下面嘅作品庫，可以即場播，亦可以直接下載 MP4。",
+  "specs": {
+    "output": "MP4 · H.264 + AAC · 1080p",
+    "turnaround": "2–3 個工作天",
+    "maxFile": "單檔 100 MB 以內"
+  },
+  "edits": [
     {
-     "t": 0.0,
-     "label": "引子：最慢的奧運紀錄",
-     "img": "thumbs/ch0.jpg"
+      "slug": "eric-eel-5min",
+      "title": "一個人的奧運：Eric the Eel",
+      "subtitle": "2000 雪梨奧運 · 100 米自由泳",
+      "desc": "由 8 分鐘原片剪成 5 分鐘：游得最慢嘅人，游出咗最動人嘅一場比賽。保留完整敘事線——外卡、冇泳池嘅九個月、50 米變 100 米、全場 17000 人為佢打氣。",
+      "video": "videos/eric-eel-5min.mp4",
+      "poster": "covers/eric-eel-5min.jpg",
+      "duration": "5:01",
+      "runtime": 300.9,
+      "size": "61 MB",
+      "date": "2026-11-01",
+      "tags": ["5 分鐘精華", "紀錄片", "運動"],
+      "featured": true,
+      "source": {
+        "name": "原片《成就感》· shortlism（8:07）",
+        "url": "https://drive.google.com/file/d/1c2z9NTaKvywVmVq9WKaKJYQtk4rpx1hj/view"
+      },
+      "summary": "原片 8:07，剪成 5:01，共 18 個段落，全部喺旁白句子同字幕換行位落刀，冇切斷任何一句對白。",
+      "chapters": [
+        { "t": 0.0, "label": "引子：最慢的奧運紀錄", "img": "thumbs/ch0.jpg" },
+        { "t": 24.8, "label": "赤道幾內亞的外卡", "img": "thumbs/ch1.jpg" },
+        { "t": 56.2, "label": "連泳褲都冇的九個月", "img": "thumbs/ch2.jpg" },
+        { "t": 83.6, "label": "雪梨：50 米變 100 米", "img": "thumbs/ch3.jpg" },
+        { "t": 148.5, "label": "一個人的比賽", "img": "thumbs/ch4.jpg" },
+        { "t": 174.7, "label": "1 分 52 秒 72", "img": "thumbs/ch5.jpg" },
+        { "t": 244.6, "label": "由最慢到金牌級", "img": "thumbs/ch6.jpg" }
+      ]
     },
     {
-     "t": 24.8,
-     "label": "赤道幾內亞的外卡",
-     "img": "thumbs/ch1.jpg"
-    },
-    {
-     "t": 56.2,
-     "label": "連泳褲都冇的九個月",
-     "img": "thumbs/ch2.jpg"
-    },
-    {
-     "t": 83.6,
-     "label": "雪梨：50 米變 100 米",
-     "img": "thumbs/ch3.jpg"
-    },
-    {
-     "t": 148.5,
-     "label": "一個人的比賽",
-     "img": "thumbs/ch4.jpg"
-    },
-    {
-     "t": 174.7,
-     "label": "1 分 52 秒 72",
-     "img": "thumbs/ch5.jpg"
-    },
-    {
-     "t": 244.6,
-     "label": "由最慢到金牌級",
-     "img": "thumbs/ch6.jpg"
+      "slug": "pak-tam-chung-3min",
+      "title": "北潭涌：兩日一夜",
+      "subtitle": "Camp Film · 2026 年 10 月 28–29 日",
+      "desc": "由 97 條片段同十多張相剪成 3 分鐘：黃昏入營同燒烤、第二朝排練、草原上面嘅集體遊戲。跟時間順序推進，留住最多能量嘅一刻。",
+      "video": "videos/pak-tam-chung-3min.mp4",
+      "poster": "covers/pak-tam-chung-3min.jpg",
+      "duration": "3:00",
+      "runtime": 180,
+      "size": "76 MB",
+      "date": "2026-10-29",
+      "tags": ["3 分鐘精華", "營會", "音樂"],
+      "featured": false,
+      "origin": "https://tyhcch1234.github.io/movie/pak-tam-chung/",
+      "source": {
+        "name": "原片素材 · 97 條片段 + 相片",
+        "url": "https://tyhcch1234.github.io/movie/pak-tam-chung/"
+      },
+      "summary": "配樂：Kevin MacLeod《Wholesome》（CC BY 4.0）。原版網頁仍然保留，兩邊都睇得返。",
+      "chapters": [
+        { "t": 0, "label": "入營" },
+        { "t": 21, "label": "炭火與燈串" },
+        { "t": 45, "label": "早晨點名" },
+        { "t": 60, "label": "樂團排練" },
+        { "t": 116, "label": "草原遊戲" }
+      ]
     }
-   ]
-  }
- ]
+  ]
 }

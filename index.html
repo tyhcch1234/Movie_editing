@@ -3,9 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Movie_editing · 剪片作品庫</title>
-<meta name="description" content="剪片作品庫：每次剪片之後嘅成品，5 分鐘精華、章節時間碼、原片出處。">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<title>Movie_editing · 剪片委託同作品庫</title>
+<meta name="description" content="填四個資料就落單：原片 Google Drive 連結、想要嘅片長、背景音樂 YouTube 連結、通知 email。剪好嘅作品全部放喺呢度，即場播、直接下載。">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
@@ -15,51 +14,163 @@
   <div class="wrap site-inner">
     <a class="brand" href="index.html">
       <span class="logo">M</span>
-      <span>Movie_editing<small>cuts &amp; highlights</small></span>
+      <span>Movie_editing<small>cut &amp; deliver</small></span>
     </a>
     <nav class="site">
       <a href="#library">作品庫</a>
-      <a href="https://github.com/tyhcch1234/Movie_editing" target="_blank" rel="noopener">GitHub</a>
+      <a href="#how">流程</a>
+      <a class="cta" href="#request">落單剪片</a>
     </nav>
   </div>
 </header>
 
 <main>
   <div class="wrap hero">
-    <span class="eyebrow">Personal edit archive</span>
-    <h1>剪好嘅片，<span>擺埋一齊</span></h1>
-    <p class="lede" id="lede">每次剪片之後嘅成品都會收埋喺呢度。</p>
+    <span class="eyebrow">Cut on request · keep the archive</span>
+    <h1>你俾素材，<span>我幫你剪</span></h1>
+    <p class="lede" id="lede">你提供原片、想要嘅長度、背景音樂同通知 email，我幫你剪成一段完整作品。剪好嘅片會累積喺下面嘅作品庫，可以即場播，亦可以直接下載 MP4。</p>
     <div class="hero-stats" id="stats"></div>
   </div>
 
-  <div class="wrap">
-    <div class="feature" id="feature"></div>
-  </div>
-
-  <section class="block wrap" id="library">
+  <!-- ============ 1. 委託表單 ============ -->
+  <section class="block wrap" id="request">
     <div class="block-head">
-      <h3>作品庫</h3>
-      <p id="libraryNote">按時間倒序排列</p>
+      <span class="head-num">01</span>
+      <h2>落單剪片</h2>
+      <p>四樣資料就夠，其餘嘅剪接決定交俾我。</p>
     </div>
-    <div class="cards" id="cards"></div>
+
+    <div class="order">
+      <form class="form-card" id="orderForm" novalidate>
+        <div class="field">
+          <label for="drive"><span class="num">1</span>原片／相片 Google Drive 連結</label>
+          <input type="url" id="drive" name="drive" inputmode="url" autocomplete="off"
+                 placeholder="https://drive.google.com/drive/folders/…">
+          <p class="hint" id="driveHint">資料夾或者單一檔案都得。記得喺 Drive 設做「知道連結嘅人都可以檢視」，唔係我開唔到。</p>
+        </div>
+
+        <div class="field">
+          <label for="duration"><span class="num">2</span>完成作品嘅長度</label>
+          <input type="text" id="duration" name="duration" inputmode="numeric"
+                 placeholder="3:00" autocomplete="off" style="max-width:180px">
+          <div class="chips" id="durChips">
+            <button type="button" class="chip" data-d="1:00">1:00</button>
+            <button type="button" class="chip" data-d="3:00">3:00</button>
+            <button type="button" class="chip" data-d="5:00">5:00</button>
+            <button type="button" class="chip" data-d="8:00">8:00</button>
+            <button type="button" class="chip" data-d="10:00">10:00</button>
+          </div>
+          <p class="hint" id="durHint">用「分:秒」填，例如 3:00、4:30，或者直接打 3。範圍 0:20 – 30:00。</p>
+        </div>
+
+        <div class="field">
+          <label for="music"><span class="num">3</span>背景音樂 YouTube 連結 <span class="opt">選填</span></label>
+          <input type="url" id="music" name="music" inputmode="url" autocomplete="off"
+                 placeholder="https://www.youtube.com/watch?v=…">
+          <p class="hint" id="musicHint">冇想用嘅歌就留空，我會配免版稅音樂。有版權嘅歌可能被 YouTube／平台靜音，自己衡量。</p>
+        </div>
+
+        <div class="field">
+          <label for="email"><span class="num">4</span>完成後通知嘅 Email</label>
+          <input type="email" id="email" name="email" inputmode="email" autocomplete="email"
+                 placeholder="you@example.com">
+          <p class="hint" id="emailHint">剪好會寄一條連結俾你，順便附下載位置。</p>
+        </div>
+
+        <div class="field">
+          <label for="notes"><span class="num">5</span>其他要求 <span class="opt">選填</span></label>
+          <textarea id="notes" name="notes" placeholder="例如：想用邊幾段、要唔要字幕、比例 16:9 定 9:16、交片死線…"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn" type="submit" id="submitBtn">送出委託</button>
+          <button class="btn ghost" type="button" id="copyBtn">複製委託單</button>
+          <button class="btn ghost" type="button" id="saveBtn">下載 .txt</button>
+        </div>
+        <p class="form-note" id="formNote">
+          送出會開一張已填好嘅 <b>GitHub Issue</b>（tyhcch1234/Movie_editing），存檔兼有跟進記錄；
+          想即刻開工就撳「複製委託單」，直接貼落同我嘅對話。呢個網站係靜態頁，唔會自動剪片。
+        </p>
+      </form>
+
+      <aside class="ticket" aria-live="polite">
+        <div class="ticket-head"><span>委託單預覽</span><b id="ticketNo">—</b></div>
+        <div class="ticket-body">
+          <div class="trow"><span class="k">片長</span><span class="v empty" id="tDur">未填</span></div>
+          <div class="trow"><span class="k">素材</span><span class="v empty" id="tDrive">未填</span></div>
+          <div class="trow"><span class="k">配樂</span><span class="v empty" id="tMusic">未填</span></div>
+          <div class="trow"><span class="k">通知</span><span class="v empty" id="tEmail">未填</span></div>
+          <div class="trow"><span class="k">落單日</span><span class="v" id="tDate">—</span></div>
+        </div>
+        <div class="ticket-foot" id="ticketFoot">
+          完成規格：<b>MP4 · H.264 / AAC · 1080p</b><br>
+          交片時間：<b>2–3 個工作天</b>
+        </div>
+      </aside>
+    </div>
   </section>
 
-  <div class="wrap" style="padding-bottom:70px">
-    <div class="notes">
-      <b>點樣新增一條片？</b> 把成品放入 <code>videos/</code>、封面放入 <code>covers/</code>，
-      再喺 <code>assets/data/edits.json</code> 加一個項目（slug、標題、長度、章節時間碼），
-      首頁同播放頁就會自動出現，唔需要改 HTML。
+  <!-- ============ 2. 作品庫 ============ -->
+  <section class="block wrap" id="library">
+    <div class="block-head">
+      <span class="head-num">02</span>
+      <h2>作品庫</h2>
+      <p id="libraryNote">剪好嘅片會累積喺度</p>
     </div>
-  </div>
+    <div class="feature" id="feature"></div>
+    <div class="cards" id="cards" style="margin-top:20px"></div>
+  </section>
+
+  <!-- ============ 3. 流程 ============ -->
+  <section class="block wrap" id="how">
+    <div class="block-head">
+      <span class="head-num">03</span>
+      <h2>由落單到下載</h2>
+      <p>每一步都留得返記錄</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="n">STEP 01</div>
+        <h4>填四個資料</h4>
+        <p>Drive 連結、片長、背景音樂、通知 email。有特別要求就寫落最後一格。</p>
+      </div>
+      <div class="step">
+        <div class="n">STEP 02</div>
+        <h4>我開工</h4>
+        <p>下載素材、順片、按你指定嘅長度剪走多餘部分、配上音樂同字幕，輸出 1080p。</p>
+      </div>
+      <div class="step">
+        <div class="n">STEP 03</div>
+        <h4>上架呢一頁</h4>
+        <p>成品入 <code>videos/</code>、封面入 <code>covers/</code>，作品庫即刻多一格，可以播放。</p>
+      </div>
+      <div class="step">
+        <div class="n">STEP 04</div>
+        <h4>Email 通知</h4>
+        <p>寄出成品連結同下載位置俾你填嘅地址，之後喺呢頁長久保存。</p>
+      </div>
+    </div>
+
+    <div class="notes">
+      <b>老實講清楚：</b>呢個網站係 GitHub Pages 靜態頁，冇伺服器，所以表單只負責「收單同存檔」，
+      真正嘅剪片係由我（AI 助手）收到委託單之後做。想最快，落單之後喺對話度同我講一聲「剪好佢」。
+      <br><b>素材要公開可讀：</b>Drive 連結如果係「限制存取」，我下載唔到，會退回等你改權限。
+    </div>
+  </section>
+
+  <div class="wrap" style="padding-bottom:70px"></div>
 </main>
 
 <footer class="site">
   <div class="wrap">
-    <span>Movie_editing — 剪片作品庫</span>
+    <span>Movie_editing — 剪片委託同作品庫</span>
     <span id="updated"></span>
   </div>
 </footer>
 
+<div class="toast" id="toast"></div>
+
 <script src="assets/js/app.js"></script>
+<script src="assets/js/order.js"></script>
 </body>
 </html>

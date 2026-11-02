@@ -13,11 +13,11 @@
   <div class="wrap site-inner">
     <a class="brand" href="index.html">
       <span class="logo">M</span>
-      <span>Movie_editing<small>cuts &amp; highlights</small></span>
+      <span>Movie_editing<small>cut &amp; deliver</small></span>
     </a>
     <nav class="site">
       <a href="index.html#library">作品庫</a>
-      <a href="index.html">返回首頁</a>
+      <a class="cta" href="index.html#request">落單剪片</a>
     </nav>
   </div>
 </header>
@@ -25,6 +25,11 @@
 <main class="wrap watch">
   <div class="player-shell">
     <video id="player" controls playsinline preload="metadata"></video>
+  </div>
+
+  <div class="watch-bar">
+    <span id="specs">1080p · MP4</span>
+    <span id="downloadSlot"></span>
   </div>
 
   <div class="watch-grid">
@@ -43,7 +48,10 @@
 </main>
 
 <footer class="site">
-  <div class="wrap"><span>Movie_editing — 剪片作品庫</span><span><a href="index.html">首頁</a></span></div>
+  <div class="wrap">
+    <span>Movie_editing — 剪片委託同作品庫</span>
+    <a href="index.html">← 返回作品庫</a>
+  </div>
 </footer>
 
 <script src="assets/js/watch.js"></script>
