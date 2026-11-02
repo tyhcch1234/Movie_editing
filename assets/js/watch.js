@@ -18,7 +18,7 @@ fetch('assets/data/edits.json', { cache: 'no-cache' })
     v.poster = e.poster;
 
     document.getElementById('specs').textContent =
-      [e.duration, e.size, '1080p · MP4'].filter(Boolean).join(' · ');
+      [e.duration, e.size, e.res, 'MP4'].filter(Boolean).join(' · ');
 
     document.getElementById('downloadSlot').innerHTML =
       `<a class="btn" href="${esc(e.video)}" download style="padding:9px 16px;font-size:13px">↓ 下載 MP4</a>`

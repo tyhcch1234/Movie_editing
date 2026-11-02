@@ -32,7 +32,7 @@ GitHub Pages 冇後端，所以表單唔會「自動剪片」。佢做三件事�
 
 ## 新增一條剪片
 
-1. 成品轉 MP4（H.264 + AAC，yuv420p，`-movflags +faststart`）放入 `videos/`。
+1. 成品轉 MP4（H.264 + AAC，yuv420p，`-movflags +faststart`），解析度跟素材，唔好 upscale放入 `videos/`。
    單檔必須 < 100 MB（GitHub 單檔上限）。
 2. 封面 JPG 放入 `covers/`（16:9，1280×720，quality 75 左右，控制喺 300 KB 內）。
 3. 喺 `assets/data/edits.json` 嘅 `edits` 陣列加一項：

@@ -20,7 +20,11 @@
       "runtime": 300.9,
       "size": "61 MB",
       "date": "2026-11-01",
-      "tags": ["5 分鐘精華", "紀錄片", "運動"],
+      "tags": [
+        "5 分鐘精華",
+        "紀錄片",
+        "運動"
+      ],
       "featured": true,
       "source": {
         "name": "原片《成就感》· shortlism（8:07）",
@@ -28,14 +32,43 @@
       },
       "summary": "原片 8:07，剪成 5:01，共 18 個段落，全部喺旁白句子同字幕換行位落刀，冇切斷任何一句對白。",
       "chapters": [
-        { "t": 0.0, "label": "引子：最慢的奧運紀錄", "img": "thumbs/ch0.jpg" },
-        { "t": 24.8, "label": "赤道幾內亞的外卡", "img": "thumbs/ch1.jpg" },
-        { "t": 56.2, "label": "連泳褲都冇的九個月", "img": "thumbs/ch2.jpg" },
-        { "t": 83.6, "label": "雪梨：50 米變 100 米", "img": "thumbs/ch3.jpg" },
-        { "t": 148.5, "label": "一個人的比賽", "img": "thumbs/ch4.jpg" },
-        { "t": 174.7, "label": "1 分 52 秒 72", "img": "thumbs/ch5.jpg" },
-        { "t": 244.6, "label": "由最慢到金牌級", "img": "thumbs/ch6.jpg" }
-      ]
+        {
+          "t": 0.0,
+          "label": "引子：最慢的奧運紀錄",
+          "img": "thumbs/ch0.jpg"
+        },
+        {
+          "t": 24.8,
+          "label": "赤道幾內亞的外卡",
+          "img": "thumbs/ch1.jpg"
+        },
+        {
+          "t": 56.2,
+          "label": "連泳褲都冇的九個月",
+          "img": "thumbs/ch2.jpg"
+        },
+        {
+          "t": 83.6,
+          "label": "雪梨：50 米變 100 米",
+          "img": "thumbs/ch3.jpg"
+        },
+        {
+          "t": 148.5,
+          "label": "一個人的比賽",
+          "img": "thumbs/ch4.jpg"
+        },
+        {
+          "t": 174.7,
+          "label": "1 分 52 秒 72",
+          "img": "thumbs/ch5.jpg"
+        },
+        {
+          "t": 244.6,
+          "label": "由最慢到金牌級",
+          "img": "thumbs/ch6.jpg"
+        }
+      ],
+      "res": "720p"
     },
     {
       "slug": "pak-tam-chung-3min",
@@ -48,7 +81,11 @@
       "runtime": 180,
       "size": "76 MB",
       "date": "2026-10-29",
-      "tags": ["3 分鐘精華", "營會", "音樂"],
+      "tags": [
+        "3 分鐘精華",
+        "營會",
+        "音樂"
+      ],
       "featured": false,
       "origin": "https://tyhcch1234.github.io/movie/pak-tam-chung/",
       "source": {
@@ -57,12 +94,28 @@
       },
       "summary": "配樂：Kevin MacLeod《Wholesome》（CC BY 4.0）。原版網頁仍然保留，兩邊都睇得返。",
       "chapters": [
-        { "t": 0, "label": "入營" },
-        { "t": 21, "label": "炭火與燈串" },
-        { "t": 45, "label": "早晨點名" },
-        { "t": 60, "label": "樂團排練" },
-        { "t": 116, "label": "草原遊戲" }
-      ]
+        {
+          "t": 0,
+          "label": "入營"
+        },
+        {
+          "t": 21,
+          "label": "炭火與燈串"
+        },
+        {
+          "t": 45,
+          "label": "早晨點名"
+        },
+        {
+          "t": 60,
+          "label": "樂團排練"
+        },
+        {
+          "t": 116,
+          "label": "草原遊戲"
+        }
+      ],
+      "res": "1080p"
     }
   ]
 }
