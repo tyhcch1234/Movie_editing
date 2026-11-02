@@ -595,12 +595,12 @@ def _silences_for(path, media, silences):
 
 
 def _title(order):
-    t = (os.environ.get("ISSUE_TITLE") or "").strip()
-    t = re.sub(r"^\[委託\]\s*", "", t)
-    if t:
-        return t[:40]
-    base = order["notes"].strip().split("\n")[0][:28]
-    return base or "自動剪作品"
+    """優先用委託單第一行（通常係作品名），否則用 issue 標題。"""
+    first = next((ln.strip() for ln in order["notes"].splitlines() if ln.strip()), "")
+    if len(first) >= 4 and not first.startswith("測試"):
+        return first[:40]
+    t = re.sub(r"^\[委託\]\s*", "", (os.environ.get("ISSUE_TITLE") or "").strip())
+    return (t or first or "自動剪作品")[:40]
 
 
 def _update_json(repo, entry):
