@@ -73,7 +73,7 @@ function render(data) {
         <h4><a href="watch.html?v=${encodeURIComponent(e.slug)}">${esc(e.title)}</a></h4>
         <p class="desc">${esc(e.subtitle || '')}</p>
         <div class="foot">
-          <span>${esc(e.date || '')}${e.size ? ' · ' + esc(e.size) : ''}</span>
+          <span>${e.auto ? '自動剪 · ' : ''}${esc(e.date || '')}${e.size ? ' · ' + esc(e.size) : ''}</span>
           <span class="acts">
             <a href="watch.html?v=${encodeURIComponent(e.slug)}">▶ 播放</a>
             <a href="${esc(e.video)}" download>↓ 下載</a>
