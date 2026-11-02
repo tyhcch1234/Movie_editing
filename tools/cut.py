@@ -230,14 +230,14 @@ def black_ratio(a, b, blacks):
 
 def transcribe(files, workdir):
     """用 faster-whisper 轉錄（可選）。冇裝就回傳 None。"""
+    model_size = os.environ.get("WHISPER_MODEL", "base")
     try:
         from faster_whisper import WhisperModel
-    except Exception:
-        log("未安裝 faster-whisper，跳過轉錄，改用靜音／場景規則")
+        log(f"載入 whisper（model={model_size}）")
+        model = WhisperModel(model_size, device="cpu", compute_type="int8")
+    except Exception as exc:
+        log(f"轉錄不可用（{exc}），改用靜音／場景規則")
         return None
-    model_size = os.environ.get("WHISPER_MODEL", "base")
-    log(f"轉錄中（model={model_size}）")
-    model = WhisperModel(model_size, device="cpu", compute_type="int8")
     out = []
     for f in files:
         if Path(f).suffix.lower() not in {".mp4", ".mov", ".mkv", ".m4v", ".webm", ".mp3", ".wav", ".m4a"}:
